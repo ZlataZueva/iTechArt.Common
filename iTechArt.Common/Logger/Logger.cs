@@ -1,6 +1,6 @@
 ﻿using System;
-using iTechArt.Common.Interfaces;
 using log4net;
+using log4net.Config;
 
 namespace iTechArt.Common.Logger
 {
@@ -12,6 +12,7 @@ namespace iTechArt.Common.Logger
         public Logger(Type type)
         {
             _log = LogManager.GetLogger(type);
+            XmlConfigurator.Configure();
         }
 
 
@@ -25,32 +26,17 @@ namespace iTechArt.Common.Logger
             _log.Info(message);
         }
 
-        public void Warn(string message)
-        {
-            _log.Warn(message);
-        }
-
-        public void Warn(string message, Exception e)
+        public void Warn(string message, Exception e = null)
         {
             _log.Warn(message, e);
         }
 
-        public void Error(string message)
-        {
-            _log.Error(message);
-        }
-
-        public void Error(string message, Exception e)
+        public void Error(string message, Exception e = null)
         {
             _log.Error(message, e);
         }
 
-        public void Fatal(string message)
-        {
-            _log.Fatal(message);
-        }
-
-        public void Fatal(string message, Exception e)
+        public void Fatal(string message, Exception e = null)
         {
             _log.Fatal(message, e);
         }

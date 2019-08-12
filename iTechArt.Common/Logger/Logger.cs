@@ -9,9 +9,9 @@ namespace iTechArt.Common.Logger
         private readonly ILog _log;
 
 
-        public Logger(Type type)
+        public Logger()
         {
-            _log = LogManager.GetLogger(type);
+            _log = LogManager.GetLogger("LOGGER");
             XmlConfigurator.Configure();
         }
 
@@ -31,12 +31,12 @@ namespace iTechArt.Common.Logger
             _log.Warn(message, e);
         }
 
-        public void Error(string message, Exception e = null)
+        public void Error(string message, Exception e)
         {
             _log.Error(message, e);
         }
 
-        public void Fatal(string message, Exception e = null)
+        public void Fatal(string message, Exception e)
         {
             _log.Fatal(message, e);
         }

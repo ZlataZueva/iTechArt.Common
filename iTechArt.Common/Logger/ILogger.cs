@@ -10,8 +10,8 @@ namespace iTechArt.Common.Logger
 
         void Warn(string message, Exception e = null);
 
-        void Error(string message, Exception e = null);
+        void Error(string message, Exception e);
 
-        void Fatal(string message, Exception e = null);
+        void Fatal(string message, Exception e);
     }
 }
